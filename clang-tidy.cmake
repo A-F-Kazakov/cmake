@@ -8,6 +8,6 @@ if(ENABLE_CLANG_TIDY)
 	else()
 		message(STATUS "clang-tidy is enabled")
 
-		set(CMAKE_CXX_CLANG_TIDY ${CLANGTIDY})
+		set(CMAKE_CXX_CLANG_TIDY ${CLANGTIDY} -extra-arg=-Wno-unknown-warning-option)
 	endif()
 endif()

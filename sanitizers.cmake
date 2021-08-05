@@ -15,6 +15,11 @@ function(enable_sanitizers project_name)
 			list(APPEND SANITIZERS "address")
 		endif()
 
+		option(ENABLE_SANITIZER_LEAK "Enable leak sanitizer" FALSE)
+		if(ENABLE_SANITIZER_LEAK)
+			list(APPEND SANITIZERS "leak")
+		endif()
+
 		option(ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" FALSE)
 		if(ENABLE_SANITIZER_MEMORY)
 			list(APPEND SANITIZERS "memory")
