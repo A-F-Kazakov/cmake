@@ -1,12 +1,12 @@
 option(ENABLE_CPPCHECK "Enable static analysis with cppcheck" OFF)
 
-if(ENABLE_CPPCHECK)
+if(${ENABLE_CPPCHECK})
 	find_program(CPPCHECK cppcheck)
 
 	if(NOT CPPCHECK)
 		message(WARNING "cppcheck requested but executable not found")
 	else()
-		message(STATUS "Cppcheck is enabled")
+		message(STATUS "cppcheck is enabled")
 
 	set(CMAKE_CXX_CPPCHECK ${CPPCHECK}
 									--suppress=missingInclude
