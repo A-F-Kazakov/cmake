@@ -1,4 +1,4 @@
-option(${PROJECT_NAME_UPPER}_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
+option(ENABLE_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
 
 set(MSVC_WARNINGS
 	/W4 # Baseline reasonable warnings
@@ -67,7 +67,7 @@ else()
 	message(AUTHOR_WARNING "No compiler warnings set for '${CMAKE_CXX_COMPILER_ID}' compiler.")
 endif()
 
-set(TARGET_NAME ${PROJECT_NAME}_warnings)
+set(TARGET_NAME ${CMAKE_PROJECT_NAME}_warnings)
 add_library(${TARGET_NAME} INTERFACE)
 target_compile_options(${TARGET_NAME} INTERFACE ${PROJECT_WARNINGS})
 add_library(${CMAKE_PROJECT_NAME}::warnings ALIAS ${TARGET_NAME})

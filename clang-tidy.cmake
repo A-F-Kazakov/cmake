@@ -8,6 +8,7 @@ if(ENABLE_CLANG_TIDY)
 	else()
 		message(STATUS "clang-tidy is enabled")
 
-		set(CMAKE_CXX_CLANG_TIDY ${CLANGTIDY} -extra-arg=-Wno-unknown-warning-option)
+		set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+		set(CMAKE_CXX_CLANG_TIDY ${CLANGTIDY} -p${CMAKE_BINARY_DIR} -fix)
 	endif()
 endif()
