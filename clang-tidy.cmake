@@ -7,7 +7,7 @@ if(ENABLE_CLANG_TIDY)
 	if(NOT CLANGTIDY)
 		message(WARNING "clang-tidy requested but executable not found")
 	else()
-		message(STATUS "clang-tidy is enabled")
+		message(STATUS "Enabled clang-tidy")
 
 		if(ENABLE_CLANG_TIDY_FIX_ERRORS)
 			set(FIX_ERRORS "--fix-errors")
